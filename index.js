@@ -1,5 +1,6 @@
 const express = require('express');
 require('./modals/user');  
+require('./modals/surveys');
 require('./services/passport');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
@@ -8,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+
 
 mongoose.connect(keys.mongoURI);
 
@@ -26,6 +28,8 @@ app.use(bodyParser.json());
 
 require('./routes/authRoutes')(app)
 require('./routes/billingRoutes')(app)
+require('./routes/surveyRoutes')(app)
+
 
 if(process.env.NODE_ENV === 'production') {
     // Express will serve up production assets
