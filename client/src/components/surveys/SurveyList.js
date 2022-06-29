@@ -21,11 +21,8 @@ class SurveyList extends Component {
             </p>
           </div>
           <div className="card-action">
-            <a>Yes: {survey.yes}</a>
+            <a href="">Yes: {survey.yes}</a>
             <a>No: {survey.no}</a>
-            {/* <Link to={`/surveys/${survey.id}`}>
-                <button className="btn blue">Take Survey</button>
-                </Link> */}
           </div>
         </div>
       );
